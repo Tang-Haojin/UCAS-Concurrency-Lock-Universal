@@ -31,8 +31,7 @@ public:
       myObject.apply(current->invoc);
       current = current->next;
     }
-    auto a = myObject.apply(current->invoc);
-    return a;
+    return myObject.apply(current->invoc);
   }
 
 private:

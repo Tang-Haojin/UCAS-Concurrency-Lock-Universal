@@ -19,6 +19,7 @@ private:
 
 TASlock lock;
 int counter = 0;
+thread_local int useless = 3;
 
 void thread_func() {
   bool working = true;
@@ -29,6 +30,8 @@ void thread_func() {
     else
       counter++;
     lock.unlock();
+    for (int i = 0; i < 1000; i++)
+      useless = (useless + 3) * useless;
   }
 }
 
